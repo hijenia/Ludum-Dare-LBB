@@ -726,6 +726,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  ropeConnectingTask: {fileID: 6298791533520229886}
 --- !u!1 &3185051793649587391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1285,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  ropeConnectingTask: {fileID: 6298791533520229886}
 --- !u!1 &5263511494392216484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,6 +1648,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  ropeConnectingTask: {fileID: 6298791533520229886}
 --- !u!1 &8423888012311206412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +1799,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  ropeConnectingTask: {fileID: 6298791533520229886}
 --- !u!1001 &765273536356859672
 PrefabInstance:
   m_ObjectHideFlags: 0

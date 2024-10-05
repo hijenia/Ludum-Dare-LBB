@@ -13,6 +13,8 @@ public class RopeConnectingTask : Task
 
 	private List<string> ropeTags;
 
+	private int connectedRopes = 0;
+
 	private void Awake()
 	{
 		ropeTags = new List<string>
@@ -49,5 +51,21 @@ public class RopeConnectingTask : Task
 					break;
 			}
 		}
+	}
+
+	public void UpdateConnectedRopesScore()
+	{
+		connectedRopes++;
+
+		if (connectedRopes >= 4)
+		{
+			CompleteTask();
+		}
+	}
+
+	private void CompleteTask()
+	{
+		GameManager.Instance.completedTasksCount++;
+		Destroy(gameObject);
 	}
 }

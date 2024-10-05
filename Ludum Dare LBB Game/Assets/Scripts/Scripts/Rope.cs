@@ -8,6 +8,7 @@ public class Rope : MonoBehaviour
 	[SerializeField] private SpriteRenderer ropeSpriteRenderer;
 	[SerializeField] private SpriteRenderer ropeEnd;
 	[SerializeField] private LayerMask layerMask;
+	[SerializeField] private RopeConnectingTask ropeConnectingTask;
 
 	private bool isDone = false;
 	
@@ -22,6 +23,7 @@ public class Rope : MonoBehaviour
 		if (!isDone)
 		{
 			Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
 			newPosition.z = 0;
 
 			Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, 1f, layerMask);
@@ -60,11 +62,13 @@ public class Rope : MonoBehaviour
 
 		//0.4 це розмір нитки, мені лень роботи її як окреме поле класса так шо похуй
 		float dist = Vector2.Distance(ropeStartPoint.position, newPosition);
-		ropeEnd.size = new Vector2(dist / 0.4f, ropeEnd.size.y);
+		ropeEnd.size = new Vector2(dist / 0.8f, ropeEnd.size.y);
 	}
 
 	private void Done()
 	{
 		isDone = true;
+
+		ropeConnectingTask.UpdateConnectedRopesScore();
 	}
 }
