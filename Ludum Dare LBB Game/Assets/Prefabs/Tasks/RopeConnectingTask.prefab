@@ -1825,6 +1825,14 @@ PrefabInstance:
       value: RopeConnectingTask
       objectReference: {fileID: 0}
     - target: {fileID: 4776706444410893015, guid: bd41cf8c4f4ac234fbc183b3bdbfa1bb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4776706444410893015, guid: bd41cf8c4f4ac234fbc183b3bdbfa1bb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4776706444410893015, guid: bd41cf8c4f4ac234fbc183b3bdbfa1bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}

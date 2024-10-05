@@ -60,7 +60,7 @@ public class Rope : MonoBehaviour
 
 		//0.4 це розмір нитки, мені лень роботи її як окреме поле класса так шо похуй
 		float dist = Vector2.Distance(ropeStartPoint.position, newPosition);
-		ropeEnd.size = new Vector2(dist / 0.4f, ropeEnd.size.y);
+		ropeEnd.size = new Vector2(dist / 0.8f, ropeEnd.size.y);
 	}
 
 	private void Done()
