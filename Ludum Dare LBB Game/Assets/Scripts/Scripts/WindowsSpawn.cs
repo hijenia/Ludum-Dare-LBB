@@ -64,6 +64,7 @@ public class WindowsSpawn : MonoBehaviour
             if (hit.collider.CompareTag("Mark"))
             {
                 SpawnWindow();
+                SoundManager.Instance.PlayQuetionMarkSound();
                 Destroy(hit.collider.gameObject);
             }
         }

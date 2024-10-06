@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropeTieringSound: {fileID: 8300000, guid: 5a4a1739dccc6ad4c8e1e03bf24397ec, type: 3}
+  quetionMarkSound: {fileID: 8300000, guid: 21d0002f4639a384daf545b98c97deee, type: 3}
 --- !u!4 &261016106
 Transform:
   m_ObjectHideFlags: 0

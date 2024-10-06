@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 	[SerializeField] private AudioClip ropeTieringSound;
+	[SerializeField] private AudioClip quetionMarkSound;
 
     private SoundManager() { }
 
@@ -26,5 +27,10 @@ public class SoundManager : MonoBehaviour
 	public void PlayRopeTieringSound()
 	{
 		AudioSource.PlayClipAtPoint(ropeTieringSound, Camera.main.transform.position, 1);
+	}
+
+	public void PlayQuetionMarkSound()
+	{
+		AudioSource.PlayClipAtPoint(quetionMarkSound, Camera.main.transform.position, 1);
 	}
 }
