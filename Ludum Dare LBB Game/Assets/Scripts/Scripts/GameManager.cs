@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return CompletedTasksCount / 10 + 1;
+            return CompletedTasksCount / 10f + 1f;
         }
 
         set { }
