@@ -34,7 +34,7 @@ public class WindowsSpawn : MonoBehaviour
                 Window = new GameObject();
                 break;
         }
-        Instantiate(Window, Vector2.zero, Quaternion.identity);
+        Instantiate(Window, new Vector2(0, -2.25f), Quaternion.identity);
     }
 
     void Update()
