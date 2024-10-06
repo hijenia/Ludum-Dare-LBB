@@ -4,14 +4,5 @@ using UnityEngine;
 
 public class Task : MonoBehaviour
 {
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+	public virtual float GetTaskTime() { return default; }
 }

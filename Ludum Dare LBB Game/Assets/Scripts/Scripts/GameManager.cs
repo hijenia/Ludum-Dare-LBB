@@ -21,7 +21,17 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
 
-    public int completedTasksCount { get; set; }
+    public int CompletedTasksCount { get; set; }
+
+    public float DifficultyMultiplier
+    {
+        get
+        {
+            return CompletedTasksCount / 10 + 1;
+        }
+
+        set { }
+    }
 
 	public bool IsCompletingTask { get; set; }
 
@@ -38,7 +48,8 @@ public class GameManager : MonoBehaviour
         }
 
         loseWindowUI.SetActive(false);
-        completedTasksCount = 0;
+        CompletedTasksCount = 0;
+        IsCompletingTask = false;
     }
 
 	private void Update()

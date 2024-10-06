@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Labirint : MonoBehaviour
+public class Labirint : Task
 {
     public Transform playerLab;
-    private Vector3 offset;
+
+	[SerializeField] private float taskTime;
+
+	private Vector3 offset;
 
     void Start()
     {
         offset = playerLab.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        GameManager.Instance.IsCompletingTask = true;
     }
 
-    void OnMouseDrag()
+	public override float GetTaskTime()
+	{
+		return taskTime;
+	}
+
+	void OnMouseDrag()
     {
         Vector3 mousePozition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePozition.z = 0;
@@ -41,7 +51,8 @@ public class Labirint : MonoBehaviour
 
     private void CompleteTask()
 	{
-		GameManager.Instance.completedTasksCount++;
+		GameManager.Instance.CompletedTasksCount++;
+        GameManager.Instance.IsCompletingTask = false;
         Destroy(gameObject.transform.parent.gameObject);
 	}
 }

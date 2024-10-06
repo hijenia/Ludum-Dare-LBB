@@ -11,6 +11,8 @@ public class RopeConnectingTask : Task
 	[SerializeField] private Color blueColor;
 	[SerializeField] private Color yellowColor;
 
+	[SerializeField] private float taskTime;
+
 	private List<string> ropeTags;
 
 	private int connectedRopes = 0;
@@ -28,6 +30,8 @@ public class RopeConnectingTask : Task
 
 	private void Start()
 	{
+		GameManager.Instance.IsCompletingTask = true;
+
 		for (int i = 0; i < ropePositionList.Count; i++)
 		{
 			int randomNumber = Random.Range(0, ropeTags.Count);
@@ -53,6 +57,11 @@ public class RopeConnectingTask : Task
 		}
 	}
 
+	public override float GetTaskTime()
+	{
+		return taskTime;
+	}
+
 	public void UpdateConnectedRopesScore()
 	{
 		connectedRopes++;
@@ -65,7 +74,8 @@ public class RopeConnectingTask : Task
 
 	private void CompleteTask()
 	{
-		GameManager.Instance.completedTasksCount++;
+		GameManager.Instance.CompletedTasksCount++;
+		GameManager.Instance.IsCompletingTask = false;
 		Destroy(gameObject);
 	}
 }
