@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject Rope3;
     public GameObject Rope4;
 
-    public float TimerMax = 8f;
+    public float TimerMax = 12f;
     public float Timer;
 
     [SerializeField] private GameObject loseWindowUI;
