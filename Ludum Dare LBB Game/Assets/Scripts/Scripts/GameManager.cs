@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
             Debug.LogError("На сцене больше одного GameManager");
+            Destroy(this);
         }
 
         loseWindowUI.SetActive(false);
@@ -81,16 +81,20 @@ public class GameManager : MonoBehaviour
         { 
             case 1:
                 RandomPosition = Rope1.transform.position;
+                Rope1.GetComponent<RopeAnimation>().ExecuteAnimation();
                 break;
             case 2:
                 RandomPosition = Rope2.transform.position;
-                break;
+				Rope2.GetComponent<RopeAnimation>().ExecuteAnimation();
+				break;
             case 3:
                 RandomPosition = Rope3.transform.position;
-                break;
+				Rope3.GetComponent<RopeAnimation>().ExecuteAnimation();
+				break;
             case 4:
                 RandomPosition = Rope4.transform.position;
-                break; 
+				Rope4.GetComponent<RopeAnimation>().ExecuteAnimation();
+				break; 
         }
 
         Instantiate(questionMark, RandomPosition, Quaternion.identity);
