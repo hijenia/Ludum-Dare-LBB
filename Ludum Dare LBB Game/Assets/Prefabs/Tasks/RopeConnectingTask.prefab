@@ -2228,6 +2228,7 @@ MonoBehaviour:
   greenColor: {r: 0.5008638, g: 1, b: 0.496, a: 1}
   blueColor: {r: 0, g: 0, b: 0.801, a: 1}
   yellowColor: {r: 1, g: 1, b: 0, a: 1}
+  taskCompletedSound: {fileID: 8300000, guid: 515ef40054655574b8740f3be6991e1f, type: 3}
   taskTime: 5
 --- !u!4 &5247970141666315727 stripped
 Transform:
