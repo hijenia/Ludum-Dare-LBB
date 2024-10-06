@@ -7,12 +7,14 @@ public class WindowsSpawn : MonoBehaviour
     public GameObject QuestionMarks;
     public GameObject WindowRope;
     public GameObject WindowLabirint;
+    public GameObject WindowLabirint2;
+    public GameObject WindowLabirint3;
     public LayerMask Ivent;
 
     public void SpawnWindow()
     {
         
-        int RandomNumb = Random.Range(0, 2);
+        int RandomNumb = Random.Range(0, 4);
         GameObject Window;
         switch(RandomNumb)
         {
@@ -21,6 +23,12 @@ public class WindowsSpawn : MonoBehaviour
                 break;
             case 1:
                 Window = WindowLabirint;
+                break;
+            case 2:
+                Window = WindowLabirint2;
+                break;
+            case 3:
+                Window = WindowLabirint3;
                 break;
             default:
                 Window = new GameObject();
