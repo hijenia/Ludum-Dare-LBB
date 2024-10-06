@@ -42,6 +42,6 @@ public class Labirint : MonoBehaviour
     private void CompleteTask()
 	{
 		GameManager.Instance.completedTasksCount++;
-        Destroy(gameObject.transform.parent);
+        Destroy(gameObject.transform.parent.gameObject);
 	}
 }
