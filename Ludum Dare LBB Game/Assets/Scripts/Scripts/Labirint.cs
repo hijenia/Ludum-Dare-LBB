@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Labirint : MonoBehaviour
+public class Labirint : Task
 {
     public Transform playerLab;
     private Vector3 offset;
