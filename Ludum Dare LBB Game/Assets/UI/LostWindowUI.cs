@@ -24,7 +24,7 @@ public class LostWindowUI : MonoBehaviour
 		});
 	}
 
-	private void UpdateScore()
+	public void UpdateScore()
 	{
 		scoreText.text = "You tied back " + GameManager.Instance.completedTasksCount + " ropes!";
 	}

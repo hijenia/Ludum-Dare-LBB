@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     public GameObject Rope3;
     public GameObject Rope4;
 
-    public float TimerMax = 5f;
+    public float TimerMax = 8f;
     public float Timer;
 
     [SerializeField] private GameObject loseWindowUI;
+    [SerializeField] private LostWindowUI LostWindowUI;
 
 	private GameManager() { }
 
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
     public void HandleLose()
     {
 		loseWindowUI.SetActive(true);
+        LostWindowUI.UpdateScore();
 	}
 
     private void SpawnQuestionMark(GameObject questionMark)
