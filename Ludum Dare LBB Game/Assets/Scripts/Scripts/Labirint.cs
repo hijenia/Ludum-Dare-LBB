@@ -6,7 +6,8 @@ public class Labirint : Task
 {
     public Transform playerLab;
 
-	[SerializeField] private float taskTime;
+    [SerializeField] private AudioClip taskCompletedSound;
+    [SerializeField] private float taskTime;
 
 	private Vector3 offset;
 
@@ -49,10 +50,15 @@ public class Labirint : Task
         }
     }
 
+    public void PlayTaskCompletedSound()
+    {
+        AudioSource.PlayClipAtPoint(taskCompletedSound, Camera.main.transform.position, 1);
+    }
     private void CompleteTask()
 	{
 		GameManager.Instance.CompletedTasksCount++;
         GameManager.Instance.IsCompletingTask = false;
         Destroy(gameObject.transform.parent.gameObject);
-	}
+        PlayTaskCompletedSound();
+    }
 }

@@ -10,6 +10,7 @@ public class RopeConnectingTask : Task
 	[SerializeField] private Color greenColor;
 	[SerializeField] private Color blueColor;
 	[SerializeField] private Color yellowColor;
+	[SerializeField] private AudioClip taskCompletedSound;
 
 	[SerializeField] private float taskTime;
 
@@ -72,10 +73,16 @@ public class RopeConnectingTask : Task
 		}
 	}
 
+	 public void PlayTaskCompletedSound()
+    {
+        AudioSource.PlayClipAtPoint(taskCompletedSound, Camera.main.transform.position, 1);
+    }
+
 	private void CompleteTask()
 	{
 		GameManager.Instance.CompletedTasksCount++;
 		GameManager.Instance.IsCompletingTask = false;
 		Destroy(gameObject);
-	}
+        PlayTaskCompletedSound();
+    }
 }

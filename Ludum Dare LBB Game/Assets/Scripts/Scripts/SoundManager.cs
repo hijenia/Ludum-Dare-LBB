@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
 	[SerializeField] private AudioClip ropeTieringSound;
 
-	private SoundManager() { }
+    private SoundManager() { }
 
 	public static SoundManager Instance { get; private set; }
 

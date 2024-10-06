@@ -14,20 +14,27 @@ public class WindowsSpawn : MonoBehaviour
     public void SpawnWindow()
     {
         
-        int RandomNumb = Random.Range(0, 4);
+        int RandomNumb = Random.Range(0, 6);
         GameObject Window;
         switch(RandomNumb)
         {
+            
             case 0:
                 Window = WindowRope;
                 break;
             case 1:
-                Window = WindowLabirint;
+                Window = WindowRope;
                 break;
             case 2:
-                Window = WindowLabirint2;
+                Window = WindowRope;
                 break;
             case 3:
+                Window = WindowLabirint;
+                break;
+            case 4:
+                Window = WindowLabirint2;
+                break;
+            case 5:
                 Window = WindowLabirint3;
                 break;
             default:
@@ -57,6 +64,7 @@ public class WindowsSpawn : MonoBehaviour
             if (hit.collider.CompareTag("Mark"))
             {
                 SpawnWindow();
+                Destroy(hit.collider.gameObject);
             }
         }
     }  

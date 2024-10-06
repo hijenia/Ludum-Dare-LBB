@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLab: {fileID: 3206670870926434298}
+  taskCompletedSound: {fileID: 8300000, guid: 515ef40054655574b8740f3be6991e1f, type: 3}
   taskTime: 15
 --- !u!50 &6369578994334443791
 Rigidbody2D:
