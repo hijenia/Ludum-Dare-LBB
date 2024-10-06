@@ -18,24 +18,30 @@ public class Labirint : MonoBehaviour
         mousePozition.z = 0;
         playerLab.position = mousePozition;
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Colision Detected with: " + collision.gameObject.name);
-
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("You lose");
+            GameManager.Instance.HandleLose();
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger detected with " + gameObject.name);
-
         if (other.CompareTag("Wall"))
         {
-            Debug.Log("You lose");
+			GameManager.Instance.HandleLose();
+		}
+        else if (other.CompareTag("Finish"))
+        {
+            CompleteTask();
         }
     }
 
+    private void CompleteTask()
+	{
+		GameManager.Instance.completedTasksCount++;
+        Destroy(gameObject.transform.parent);
+	}
 }

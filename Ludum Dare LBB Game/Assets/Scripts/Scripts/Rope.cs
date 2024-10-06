@@ -8,6 +8,7 @@ public class Rope : MonoBehaviour
 	[SerializeField] private SpriteRenderer ropeSpriteRenderer;
 	[SerializeField] private SpriteRenderer ropeEnd;
 	[SerializeField] private LayerMask layerMask;
+	[SerializeField] private RopeConnectingTask ropeConnectingTask;
 
 	private bool isDone = false;
 	
@@ -22,6 +23,7 @@ public class Rope : MonoBehaviour
 		if (!isDone)
 		{
 			Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
 			newPosition.z = 0;
 
 			Collider2D[] colliders = Physics2D.OverlapCircleAll(newPosition, 1f, layerMask);
@@ -66,5 +68,7 @@ public class Rope : MonoBehaviour
 	private void Done()
 	{
 		isDone = true;
+
+		ropeConnectingTask.UpdateConnectedRopesScore();
 	}
 }
